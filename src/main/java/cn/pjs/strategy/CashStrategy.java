@@ -19,7 +19,7 @@ public class CashStrategy {
 }
 class Client {
     public void start() {
-        while (true) {
+        for (;;) {
             System.out.println("请输入折扣策略");
             Scanner scanner = new Scanner(System.in);
             String next = scanner.next();
@@ -69,9 +69,9 @@ class CashNormal extends CashSuper{
 @AllArgsConstructor
 class CashReturn extends CashSuper{
 
-    private BigDecimal total;
+    private final BigDecimal total;
 
-    private BigDecimal sub;
+    private final BigDecimal sub;
 
     @Override
     public BigDecimal getResult(BigDecimal money) {
@@ -84,7 +84,7 @@ class CashReturn extends CashSuper{
 }
 @AllArgsConstructor
 class CashRebate extends CashSuper{
-    private BigDecimal rebate;
+    private final BigDecimal rebate;
 
     @Override
     public BigDecimal getResult(BigDecimal money) {
